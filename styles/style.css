@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-main), sans-serif;
-  font-variation-settings: var(--font-weight-regular);
+  font-variation-settings: "wght" var(--font-weight-regular);
   background-image: var(--gradient);
   background-attachment: fixed;
   background-size: cover;
@@ -70,7 +70,7 @@ h1 {
 .card__title {
   font-size: 18px;
   font-family: var(--font-main);
-  font-weight: var( --font-weight-bold);
+  font-variation-settings: "wght" var(--font-weight-bold);
   margin: 5px 10px;
 }
 
