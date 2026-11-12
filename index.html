@@ -14,11 +14,11 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   </head>
   <body class="page">
-    <header class="header">
-      <h1>&lt;/HTML&gt;</h1>
-      <p class="header_text">закрывающий тег</p>
+    <header class="header__content">
+      <span class="logo__header">&lt;/HTML&gt;</span>
+      <h1 class="header__text">закрывающий тег</h1>
     </header>
-    <main>
+    <main class="main__content">
       <ul class="cards">
         <li class="card">
           <article class="card__content">
@@ -40,7 +40,7 @@
                     <path class="sparks" fill="var(--animation-fill-color)" d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"/>
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -66,7 +66,7 @@
                     <path class="sparks" fill="var(--animation-fill-color)" d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"/>
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -80,7 +80,7 @@
               <p class="card__label">&lt;/HTML&gt;</p>
             </div>
             <p class="card__text">Первый проект — позади! Но это всё ещё самое начало пути. Радость могла быстро померкнуть и смениться ожиданием провала. Или вы, наоборот, могли вдохновиться успехами и поверить в себя.</p>
-            <p class="card__text comment">Был заряд на успех.</p>
+            <p class="card__text comment">Был заряд на успех, казалось, что уже много знаний.</p>
             <div class="card__buttons">
               <button type="button" class="card__icon-button" aria-label="Поставить лайк">
                 <svg class="like-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none" viewBox="0 0 39 36">
@@ -92,7 +92,7 @@
                     <path class="sparks" fill="var(--animation-fill-color)" d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"/>
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -106,7 +106,7 @@
               <p class="card__label">&lt;/HTML&gt;</p>
             </div>
             <p class="card__text">На этом этапе вы уже достаточно разбирались в основах вёрстки, чтобы понять, как много ещё впереди. Вы могли попытаться погнаться за идеалом и понять, что он недостижим. А, может, вы вовсе и не подвержены перфекционизму и вместо того, чтобы сделать идеально, старались просто сделать.</p>
-            <p class="card__text comment">Всё еще был заряд на победу.</p>
+            <p class="card__text comment">Всё еще был заряд на победустаралась делать идеально.</p>
             <div class="card__buttons">
               <button type="button" class="card__icon-button" aria-label="Поставить лайк">
                 <svg class="like-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none" viewBox="0 0 39 36">
@@ -118,7 +118,7 @@
                     <path class="sparks" fill="var(--animation-fill-color)" d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"/>
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -144,7 +144,7 @@
                     <path class="sparks" fill="var(--animation-fill-color)" d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"/>
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -158,7 +158,7 @@
               <p class="card__label">&lt;/HTML&gt;</p>
             </div>
             <p class="card__text">На этом курсе вы постоянно решали разные задачи. В какой-то момент вам могло показаться, что решения просто иссякли. Значит, пришло время посмотреть на задачу под другим углом.</p>
-            <p class="card__text comment">Таких ситуаций было очень много.</p>
+            <p class="card__text comment">Таких ситуаций было очень много, но сдаваться было нельзя.</p>
             <div class="card__buttons">
               <button type="button" class="card__icon-button" aria-label="Поставить лайк">
                 <svg class="like-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="none" viewBox="0 0 39 36">
@@ -170,7 +170,7 @@
                     <path class="sparks" fill="var(--animation-fill-color)" d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"/>
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -196,7 +196,7 @@
                     <path class="sparks" fill="var(--animation-fill-color)" d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"/>
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -222,7 +222,7 @@
                     <path class="sparks" fill="var(--animation-fill-color)" d="M36 13h3v3h-3zm-9 14h3v3h-3zm-9 6h3v3h-3zm-9-6h3v3H9zM24 0h3v3h-3zm9 3h3v3h-3zM3 3h3v3H3zm9-3h3v3h-3zM0 13h3v3H0z"/>
                 </svg>
               </button>
-              <button class="card__like-button" type="button">
+              <button class="button card__like-button" type="button">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -230,7 +230,7 @@
         </li>
       </ul>
       <button 
-        class="memory" 
+        class="button memory" 
         type="button" 
         onclick="window['dialog-id'].showModal()" 
         aria-controls="dialog-id"
@@ -247,13 +247,11 @@
         <use href="./svg/floppy.svg#floppy"></use>
       </svg>
       <h2 class="dialog__text">Вставьте дискету, чтобы продолжить</h2>
-      <button
-      class="dialog__button"
-      type="button"
-      onclick="window['dialog-id'].close()"
-      >
-        <span class="button__text">ок</span>
-      </button>
+      <form class="dialog__form" method="dialog">
+        <button class="button dialog__button" type="submit">
+          <span class="button__text">ОК</span>
+        </button>
+      </form>
     </dialog>
   </body>
 </html>

@@ -13,7 +13,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--font-main), sans-serif;
+  font-family: var(--font-main, sans-serif);
   font-variation-settings: "wght" var(--font-weight-regular);
   background-image: var(--gradient);
   background-attachment: fixed;
@@ -22,44 +22,39 @@
   margin: auto;
 }
 
-header,
-main {
+.header__content,
+.main__content {
   width: var(--block-width);
   margin-inline: auto;
 }
 
-button {
-  cursor: pointer;
-  padding-block: 0px;
-  padding-inline: 0px;
-}
-
-button,
-.header,
+.button,
+.header__content,
 .card {
   background-color: var(--color-background);
   border: 2px solid var(--color-accent);
 }
 
-.header {
+.header__content {
   display: grid;
-  min-height: 368px;
   margin-top: 100px;
   margin-bottom: 100px;
   place-items: center;
   align-content: center;
   gap: 20px;
+  padding: 128px 122px;
 }
 
-h1 {
+.logo__header {
   font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
-  font-family: var(--font-accent);
+  font-family: var(--font-accent, fantasy);
 }
 
-.header_text,
+.header__text,
 .dialog__text {
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
-  font-family: var(--font-accent);
+  font-family: var(--font-accent, fantasy);
+  text-transform: uppercase;
 }
 
 .cards {
@@ -69,12 +64,13 @@ h1 {
 
 .card__title {
   font-size: 18px;
-  font-family: var(--font-main);
+  font-family: var(--font-main, sans-serif);
   font-variation-settings: "wght" var(--font-weight-bold);
-  margin: 5px 10px;
+  margin: 4.5px 10px;
 }
 
 .card__image {
+  box-sizing: content-box; /* Нужна была рамка снаружи, чтобы совпало с макетом */
   position: relative;
   mix-blend-mode: hard-light;
   overflow: hidden;
@@ -123,7 +119,7 @@ h1 {
   right: 25px;
   top: 25px;
   font-size: 14px;
-  font-family: var(--font-accent);
+  font-family: var(--font-accent, fantasy);
   opacity: 0.5;
   mix-blend-mode: hard-light;
   text-shadow:
@@ -145,7 +141,6 @@ h1 {
   justify-self: right;
   margin-right: 25px;
   margin-bottom: 25px;
-  gap: 6px;
   place-items: center;
 }
 
@@ -154,6 +149,7 @@ h1 {
   outline: 2px solid transparent;
   transition: outline-color 0.3s ease;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .card__icon-button:focus-visible {
@@ -223,7 +219,7 @@ h1 {
 }
 
 .button__text {
-  font-family: var(--font-accent);
+  font-family: var(--font-accent, fantasy);
   font-size: 14px;
   line-height: 90%;
   position: relative;
@@ -232,17 +228,17 @@ h1 {
   color: var(--color-text-button);
 }
 
-.card__like-button {
-  padding: 7px 35px;
+.button.card__like-button {
+  padding: 9.5px 35px;
 }
 
-.memory {
+.button.memory {
   display: grid;
   grid-auto-flow: column;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin: 50px auto 0;
+  margin: 50px auto 100px;
   padding: 15px 18px;
 }
 
@@ -260,6 +256,7 @@ dialog[open] {
   align-items: center;
   width: clamp(341px, 100vw, 353px);
   padding: 27px;
+  border: 2px solid var(--color-accent);
 }
 
 dialog::backdrop {
@@ -271,33 +268,38 @@ dialog::backdrop {
   height: 39px;
 }
 
-.dialog__button {
+.dialog__form {
   grid-column: 1 / -1;
+}
+
+.button.dialog__button {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 10px;
 }
 
 .dialog__text {
   font-size: 14px;
+  line-height: 150%;
 }
 
-.card__like-button,
-.memory,
-.dialog__button {
+.button {
   box-shadow: 0 0 0 transparent;
   transition: box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  padding-block: 0px;
+  padding-inline: 0px;
+  line-height: 90%;
 }
 
-.card__like-button:focus-visible,
-.memory:focus-visible,
-.dialog__button:focus-visible {
+.button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 var(--color-accent);
 }
 
-.card__like-button::before,
-.memory::before,
-.dialog__button::before {
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -307,22 +309,21 @@ dialog::backdrop {
   z-index: 1;
 }
 
-.card__like-button:hover::before,
-.memory:hover::before,
-.dialog__button:hover::before {
+.button:hover::before {
   transform: translateX(0);
 }
 
 @supports((text-stroke: 1px var(--text-stroke)) or (-webkit-text-stroke: 1px var(--text-stroke))) {
   .card__label {
     -webkit-text-stroke: 1px var(--text-stroke);
+    text-stroke: 1px var(--text-stroke);
     text-shadow: none;
   }
 }
 
 @media (width <= 375px) {
-  .header {
-  min-height: 327px;
+  .header__content {
+  padding: 120px 16px;
   }
 
   .floppy__icon.main {
@@ -330,11 +331,11 @@ dialog::backdrop {
     height: 28px;
   }
 
-  .memory {
+  .button.memory {
     grid-auto-flow: row;
     justify-items: center;
     align-content: center;
-    padding: 16px 20px;
+    padding: 16px 18px;
   }
 
   dialog[open] {
