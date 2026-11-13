@@ -42,7 +42,7 @@
   place-items: center;
   align-content: center;
   gap: 20px;
-  padding: 128px 122px;
+  padding: 128px clamp(14px, 8.5vw, 122px);
 }
 
 .logo__header {
@@ -50,8 +50,7 @@
   font-family: var(--font-accent, fantasy);
 }
 
-.header__text,
-.dialog__text {
+.header__text {
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   font-family: var(--font-accent, fantasy);
   text-transform: uppercase;
@@ -142,6 +141,7 @@
   margin-right: 25px;
   margin-bottom: 25px;
   place-items: center;
+  gap: 8px;
 }
 
 .card__icon-button {
@@ -150,6 +150,12 @@
   transition: outline-color 0.3s ease;
   background-color: transparent;
   cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  outline-offset: -2px; /* Чтобы рамка была внутри заданных размеров */
+  padding: 0;
 }
 
 .card__icon-button:focus-visible {
@@ -174,6 +180,7 @@
 }
 
 .like-icon {
+  margin: auto;
   display: block;
 }
 
@@ -281,6 +288,8 @@ dialog::backdrop {
 .dialog__text {
   font-size: 14px;
   line-height: 150%;
+  text-transform: uppercase;
+  font-family: var(--font-accent, fantasy);
 }
 
 .button {
@@ -321,9 +330,16 @@ dialog::backdrop {
   }
 }
 
+@media (width <= 550px) {
+  .header__content {
+  padding: 128px clamp(14px, 3.7vw, 122px);
+  }
+}
+
 @media (width <= 375px) {
   .header__content {
-  padding: 120px 16px;
+  padding-top: 120px;
+  padding-bottom: 120px;
   }
 
   .floppy__icon.main {
@@ -342,4 +358,3 @@ dialog::backdrop {
     padding: 27px 37px;
   }
 }
-
